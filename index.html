@@ -9,6 +9,39 @@
   <script src="app.js" defer></script>
 </head>
 <body>
+  <section id="login-view" class="login-view" aria-labelledby="login-title">
+    <div class="demo-banner"><strong>Site de démonstration</strong><span>N’utilisez pas vos vrais identifiants : aucune donnée personnelle n’est demandée.</span></div>
+    <header class="login-identity">
+      <div class="school-logo" aria-label="Collège des Horizons"><strong>COLLÈGE</strong><span>DES HORIZONS</span></div>
+      <div class="login-heading"><strong>SITE DE DÉMONSTRATION</strong><span>Portail scolaire du Collège des Horizons</span></div>
+      <div class="campus-brand" aria-label="Campus"><span class="brand-mark">c</span><strong>CAMPUS</strong></div>
+    </header>
+    <main class="login-main">
+      <section class="login-card">
+        <div class="login-card-title"><span class="login-avatar" aria-hidden="true">♙</span><h1 id="login-title">Espace Élèves</h1></div>
+        <form id="login-form" novalidate>
+          <p class="required-note"><span>*</span> champs obligatoires</p>
+          <label for="login-identifier">Identifiant <span>*</span></label>
+          <input id="login-identifier" name="identifier" autocomplete="username" value="demonstration" required>
+          <label for="login-password">Mot de passe <span>*</span></label>
+          <div class="password-control">
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+            <button id="toggle-password" type="button" aria-label="Afficher le mot de passe" aria-pressed="false">◉</button>
+          </div>
+          <p id="login-error" class="login-error" role="alert" hidden>Identifiant ou mot de passe incorrect.</p>
+          <button class="login-submit" type="submit">Se connecter</button>
+        </form>
+        <aside class="demo-account" aria-label="Compte de démonstration">
+          <strong>Compte de démonstration</strong>
+          <span>Identifiant : <b>demonstration</b></span>
+          <span>Mot de passe : <b>campus</b></span>
+        </aside>
+      </section>
+    </main>
+    <footer class="login-footer"><span>Mentions légales</span><i></i><span>Confidentialité</span><i></i><span>Accessibilité : partiellement conforme</span><strong>CAMPUS</strong></footer>
+  </section>
+
+  <div id="portal-shell" hidden>
   <header class="identity-bar">
     <div class="school-logo" aria-label="Collège des Horizons"><strong>COLLÈGE</strong><span>DES HORIZONS</span></div>
     <div class="identity-center">
@@ -16,7 +49,11 @@
       <div><strong>SITE DE DÉMONSTRATION</strong><span>Espace Élèves · Alexis Laurent (3e B)</span></div>
       <span class="online-dot" title="Connecté"></span>
     </div>
-    <a class="campus-brand" href="#accueil" aria-label="Accueil Campus"><span class="brand-mark">c</span><strong>CAMPUS</strong></a>
+    <div class="identity-actions">
+      <button class="account-button" type="button" aria-label="Informations du compte" title="Compte d’Alexis Laurent">AL</button>
+      <button id="logout-button" class="logout-button" type="button" aria-label="Se déconnecter" title="Se déconnecter">↪</button>
+      <a class="campus-brand" href="#accueil" aria-label="Accueil Campus"><span class="brand-mark">c</span><strong>CAMPUS</strong></a>
+    </div>
   </header>
   <nav class="main-nav" aria-label="Menu principal">
     <a href="#accueil" data-page="accueil" aria-label="Accueil"><span class="nav-icon">⌂</span></a>
@@ -26,6 +63,7 @@
     <a href="#competences" data-page="competences">Compétences</a>
     <a href="#resultats" data-page="resultats">Résultats</a>
     <a href="#vie" data-page="vie">Vie<br>scolaire</a>
+    <a href="#stage" data-page="stage">Stage</a>
     <a href="#communication" data-page="communication">Communication <span class="notification">2</span></a>
     <span class="nav-spacer"></span>
     <button class="nav-action" aria-label="Aide">?</button>
@@ -41,5 +79,6 @@
     <strong>CAMPUS</strong><span>Démonstration indépendante · Données fictives</span>
   </footer>
   <div id="notice" role="status" aria-live="polite"></div>
+  </div>
 </body>
 </html>
